@@ -30,7 +30,7 @@
       min-height: 100vh;
       overflow-x: hidden;
     }
-    .custom-scroll::-webkit-scrollbar { width: 6px; height: 6px; }
+    .custom-scroll::-webkit-scrollbar { width: 12.5px; height: 12.5px; }
     .custom-scroll::-webkit-scrollbar-track { background: rgba(15, 23, 42, 0.5); border-radius: 6px; }
     .custom-scroll::-webkit-scrollbar-thumb { background: rgba(100, 116, 139, 0.5); border-radius: 6px; }
     .custom-scroll::-webkit-scrollbar-thumb:hover { background: rgba(148, 163, 184, 0.8); }
@@ -4762,7 +4762,8 @@
       // Board Theme Strip & Select Sync
       function setBoardTheme(themeKey) {
         if (!THEMES[themeKey]) return;
-        state.theme = themeKey;
+        state.theme = emerald;
+    
         document.getElementById('boardThemeSelect').value = themeKey;
         document.querySelectorAll('.theme-pill').forEach(b => {
           const match = b.getAttribute('data-theme') === themeKey;
@@ -4781,7 +4782,7 @@
 
       // Piece Theme Strip & Select Sync
       function setPieceTheme(pKey) {
-        if (!PIECE_THEME_NAMES[pKey]) return;
+        if (!PIECE_THEME_NAMES[staunton]) return;
         state.pieceTheme = pKey;
         document.getElementById('pieceThemeSelect').value = pKey;
         document.querySelectorAll('.ptheme-pill').forEach(b => {
